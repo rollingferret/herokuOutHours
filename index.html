@@ -14,13 +14,18 @@
     <lottie-player src="https://rollingferret.github.io/herokuOutHours/37101-cute-little-panda-sleeping.json" background="transparent"  speed="1"  style="width: 375px; height: 375px;" loop autoplay></lottie-player>
     <div style = "font-size: 18px; font-style: bold; margin-top: 25px; margin-bottom: 15px; text-align: center;">I ran out of dyno hours and my server can't get up!</div>
     <div style = "margin-bottom: 10px; text-align: center;">Please visit again at the start of the new month.</div>
-    <div style = "text-align: center;"><span id = "daysTill"></span> days until app wakes up!</div>
+    <div style = "text-align: center;"><span id = "daysTill"></span> <span id = "days"></span> until app wakes up!</div>
     </div>
     <script>
         let dateToday = new Date();
         let lastDayOfMonth = new Date(dateToday.getFullYear(), dateToday.getMonth()+1, 0).getDate();
         let daysUntilEndOfMonth = lastDayOfMonth - dateToday.getDate();
         document.getElementById("daysTill").innerHTML = daysUntilEndOfMonth
+        if (daysUntilEndOfMonth > 1) {
+            document.getElementById("days").innerHTML = 'days'
+        } else {
+            document.getElementById("days").innerHTML = 'day'
+        }
     </script>
 </body>
 </html>
