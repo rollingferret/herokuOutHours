@@ -19,7 +19,7 @@
     <script>
         let dateToday = new Date();
         let lastDayOfMonth = new Date(dateToday.getFullYear(), dateToday.getMonth()+1, 0).getDate();
-        let daysUntilEndOfMonth = lastDayOfMonth - dateToday.getDate();
+        let daysUntilEndOfMonth = (lastDayOfMonth - dateToday.getDate()) + 1;
         document.getElementById("daysTill").innerHTML = daysUntilEndOfMonth
         if (daysUntilEndOfMonth > 1) {
             document.getElementById("days").innerHTML = 'days'
